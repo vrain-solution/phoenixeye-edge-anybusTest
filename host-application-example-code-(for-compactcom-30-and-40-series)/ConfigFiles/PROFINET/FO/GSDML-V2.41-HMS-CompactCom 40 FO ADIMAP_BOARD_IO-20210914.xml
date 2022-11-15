@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.41.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x010C" DeviceID="0x0010">
+      <InfoText TextId="T_ID_DEV_DESCRIPTION"/>
+      <VendorName Value="HMS Industrial Networks"/>
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="General" ProductFamily="Anybus CompactCom 40 FO ADIMAP_BOARD_IO"/>
+    </DeviceFunction>
+    <ApplicationProcess>
+      <!-- ============================================================================================ -->
+      <!--   List of Device Access Points (DAP)                                                         -->
+      <!-- ============================================================================================ -->
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="DAP-FO" PhysicalSlots="0..8" AddressAssignment="DCP" ModuleIdentNumber="0x80010002" MinDeviceInterval="8" ImplementationType="NP40" DNS_CompatibleName="AnybusCompactCom40ADIMAPBOARDIO" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" NumberOfDeviceAccessAR="2" WebServer="http:///" MultipleWriteSupported="true" NameOfStationNotTransferable="true" ParameterizationSpeedupSupported="true" LLDP_NoD_Supported="true" CheckDeviceID_Allowed="true" ResetToFactoryModes="2 8" RequiredSchemaVersion="V2.25" PNIO_Version="V2.41">
+          <ModuleInfo>
+            <Name TextId="T_ID_DAP_FO"/>
+            <InfoText TextId="T_ID_DAP_DESCRIPTION_FO"/>
+            <VendorName Value="HMS Industrial Networks"/>
+            <OrderNumber Value="CompactCom 40 PIR-FO"/>
+          </ModuleInfo>
+          <CertificationInfo ConformanceClass="C" ApplicationClass="" NetloadClass="III"/>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+            <SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+            <SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="1440" MaxOutputLength="1440"/>
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT_ADI100" UsedInSlots="1"/>
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT_ADI101" UsedInSlots="2"/>
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT_ADI102" UsedInSlots="3"/>
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT_ADI103" UsedInSlots="4"/>
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT_ADI104" UsedInSlots="5"/>
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT_ADI105" UsedInSlots="6"/>
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT_ADI106" UsedInSlots="7"/>
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT_ADI107" UsedInSlots="8"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP-FO" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3" MayIssueProcessAlarm="false" IM5_Supported="true">
+              <IOData/>
+              <ModuleInfo>
+                <Name TextId="T_ID_DAP_FO"/>
+                <InfoText TextId="T_ID_DAP_DESCRIPTION_FO"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="Interface-FO" SubslotNumber="32768" SubmoduleIdentNumber="0x00000002" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" TextId="T_ID_INTERFACE" SupportedProtocols="SNMP;LLDP" PTP_BoundarySupported="true" DCP_BoundarySupported="true" DelayMeasurementSupported="true">
+              <RT_Class3Properties StartupMode="Legacy;Advanced" ForwardingMode="Relative" MaxNumberIR_FrameData="128" MaxBridgeDelay="2760"/>
+              <SynchronisationMode SupportedRole="SyncSlave" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP"/>
+              <ApplicationRelations StartupMode="Legacy;Advanced">
+                <TimingProperties SendClock="8 16 32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+                <RT_Class3TimingProperties SendClock="8 16 32 64 128" ReductionRatio="1 2 4 8 16"/>
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client"/>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="Port 1 FO" SubslotNumber="32769" SubmoduleIdentNumber="0x00000003" MAUTypes="54" FiberOpticTypes="4 5" TextId="T_ID_PORT1" MaxPortRxDelay="65" MaxPortTxDelay="120" PortDeactivationSupported="true" PowerBudgetControlSupported="true" LinkStateDiagnosisCapability="Up+Down" SupportsRingportConfig="true" IsDefaultRingport="true" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true">
+              <MAUTypeList ExtensionSupported="true">
+                <MAUTypeItem Value="54" Extension="0" AdjustSupported="true"/>
+                <MAUTypeItem Value="18" Extension="256" AdjustSupported="true"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+            <PortSubmoduleItem ID="Port 2 FO" SubslotNumber="32770" SubmoduleIdentNumber="0x00000003" MAUTypes="54" FiberOpticTypes="4 5" TextId="T_ID_PORT2" MaxPortRxDelay="65" MaxPortTxDelay="120" PortDeactivationSupported="true" PowerBudgetControlSupported="true" LinkStateDiagnosisCapability="Up+Down" SupportsRingportConfig="true" IsDefaultRingport="true" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true">
+              <MAUTypeList ExtensionSupported="true">
+                <MAUTypeItem Value="54" Extension="0" AdjustSupported="true"/>
+                <MAUTypeItem Value="18" Extension="256" AdjustSupported="true"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <!-- ============================================================================================ -->
+      <!--   List of modules                                                                            -->
+      <!-- ============================================================================================ -->
+      <ModuleList>
+        <ModuleItem ID="ID_MODULE_INPUT_ADI100" ModuleIdentNumber="0x00000064">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_INPUT_ADI100"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI100_GROUP1" SubmoduleIdentNumber="0x00000100" FixedInSubslots="1" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_DATAITEM_INPUT_ADI100_ELEMENT1"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_INPUT_ADI100"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT_GROUP"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_INPUT_ADI101" ModuleIdentNumber="0x00000065">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_INPUT_ADI101"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI101_GROUP1" SubmoduleIdentNumber="0x00000100" FixedInSubslots="1" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="T_ID_DATAITEM_INPUT_ADI101_ELEMENT1"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_INPUT_ADI101"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT_GROUP"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_INPUT_ADI102" ModuleIdentNumber="0x00000066">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_INPUT_ADI102"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI102_GROUP1" SubmoduleIdentNumber="0x00000100" FixedInSubslots="1" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="T_ID_DATAITEM_INPUT_ADI102_ELEMENT1"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_INPUT_ADI102"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT_GROUP"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_INPUT_ADI103" ModuleIdentNumber="0x00000067">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_INPUT_ADI103"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI103_GROUP1" SubmoduleIdentNumber="0x00000100" FixedInSubslots="1" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="T_ID_DATAITEM_INPUT_ADI103_ELEMENT1"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_INPUT_ADI103"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT_GROUP"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_OUTPUT_ADI104" ModuleIdentNumber="0x00000068">
+          <ModuleInfo CategoryRef="CAT_REF_OUT_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_OUTPUT_ADI104"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI104_GROUP1" SubmoduleIdentNumber="0x10000100" FixedInSubslots="1" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DATAITEM_OUTPUT_ADI104_ELEMENT1"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_OUTPUT_ADI104"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT_GROUP"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_OUTPUT_ADI105" ModuleIdentNumber="0x00000069">
+          <ModuleInfo CategoryRef="CAT_REF_OUT_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_OUTPUT_ADI105"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI105_GROUP1" SubmoduleIdentNumber="0x10000100" FixedInSubslots="1" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="T_ID_DATAITEM_OUTPUT_ADI105_ELEMENT1"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_OUTPUT_ADI105"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT_GROUP"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_INPUT_ADI106" ModuleIdentNumber="0x0000006A">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_INPUT_ADI106"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI106_GROUP1" SubmoduleIdentNumber="0x00000100" FixedInSubslots="1" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DATAITEM_INPUT_ADI106_ELEMENT1"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_INPUT_ADI106"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT_GROUP"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_INPUT_ADI107" ModuleIdentNumber="0x0000006B">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_INPUT_ADI107"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI107_GROUP1" SubmoduleIdentNumber="0x00000100" FixedInSubslots="1" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Float32" TextId="T_ID_DATAITEM_INPUT_ADI107_ELEMENT1"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_INPUT_ADI107"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT_GROUP"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <GraphicsList>
+        <GraphicItem ID="1" GraphicFile=""/>
+      </GraphicsList>
+      <!-- ============================================================================================ -->
+      <!--   List of categories                                                                          -->
+      <!-- ============================================================================================ -->
+      <CategoryList>
+        <CategoryItem ID="CAT_REF_IN_MODULES" TextId="T_ID_CAT_REF_IN_MODULES"/>
+        <CategoryItem ID="CAT_REF_OUT_MODULES" TextId="T_ID_CAT_REF_OUT_MODULES"/>
+      </CategoryList>
+      <!-- ============================================================================================ -->
+      <!--   ExternalTextList                                                                           -->
+      <!-- ============================================================================================ -->
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <Text TextId="T_ID_DEV_DESCRIPTION" Value="HMS Industrial Networks"/>
+          <!--Identification-->
+          <Text TextId="T_ID_DAP_FO" Value="STM3240G-EVAL"/>
+          <Text TextId="T_ID_DAP_DESCRIPTION_FO" Value="Supports RT, IRT and non-cyclic communications over fiber optical"/>
+          <Text TextId="T_ID_SS_INTERFACE" Value="X1"/>
+          <Text TextId="T_ID_SS_PORT1" Value="P1"/>
+          <Text TextId="T_ID_SS_PORT2" Value="P2"/>
+          <Text TextId="T_ID_INTERFACE" Value="Interface"/>
+          <Text TextId="T_ID_PORT1" Value="Port 1"/>
+          <Text TextId="T_ID_PORT2" Value="Port 2"/>
+          <!--Vendor module category-->
+          <Text TextId="T_ID_CAT_REF_IN_MODULES" Value="Input"/>
+          <Text TextId="T_ID_CAT_REF_OUT_MODULES" Value="Output"/>
+          <!-- Vendor module texts -->
+          <Text TextId="T_ID_INFO_TEXT_ADI" Value=""/>
+          <Text TextId="T_ID_SUBMOD_INFO_ELEMENT_GROUP" Value="ADI element group"/>
+          <Text TextId="T_ID_DATAITEM_INPUT_ADI100_ELEMENT1" Value="ADI#100, Element#1"/>
+          <Text TextId="T_ID_MODULE_NAME_INPUT_ADI100" Value="Read TIM5"/>
+          <Text TextId="T_ID_DATAITEM_INPUT_ADI101_ELEMENT1" Value="ADI#101, Element#1"/>
+          <Text TextId="T_ID_MODULE_NAME_INPUT_ADI101" Value="Read RD Counter"/>
+          <Text TextId="T_ID_DATAITEM_INPUT_ADI102_ELEMENT1" Value="ADI#102, Element#1"/>
+          <Text TextId="T_ID_MODULE_NAME_INPUT_ADI102" Value="Read WR Counter"/>
+          <Text TextId="T_ID_DATAITEM_INPUT_ADI103_ELEMENT1" Value="ADI#103, Element#1"/>
+          <Text TextId="T_ID_MODULE_NAME_INPUT_ADI103" Value="Read 3 Hex Switches"/>
+          <Text TextId="T_ID_DATAITEM_OUTPUT_ADI104_ELEMENT1" Value="ADI#104, Element#1"/>
+          <Text TextId="T_ID_MODULE_NAME_OUTPUT_ADI104" Value="Read/Write 4 LEDs"/>
+          <Text TextId="T_ID_DATAITEM_OUTPUT_ADI105_ELEMENT1" Value="ADI#105, Element#1"/>
+          <Text TextId="T_ID_MODULE_NAME_OUTPUT_ADI105" Value="Read/Write 8 LEDs + 8 I/Os"/>
+          <Text TextId="T_ID_DATAITEM_INPUT_ADI106_ELEMENT1" Value="ADI#106, Element#1"/>
+          <Text TextId="T_ID_MODULE_NAME_INPUT_ADI106" Value="Read Key"/>
+          <Text TextId="T_ID_DATAITEM_INPUT_ADI107_ELEMENT1" Value="ADI#107, Element#1"/>
+          <Text TextId="T_ID_MODULE_NAME_INPUT_ADI107" Value="Read Potentiometer"/>
+        </PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

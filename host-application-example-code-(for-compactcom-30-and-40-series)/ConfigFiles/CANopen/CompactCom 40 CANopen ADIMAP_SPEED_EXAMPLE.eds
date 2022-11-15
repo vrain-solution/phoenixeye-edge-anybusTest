@@ -1,0 +1,484 @@
+;------------------------------------------------------------------------------
+; EDS file for Anybus CompactCom 40 CANopen Starterkit Speed Example
+;------------------------------------------------------------------------------
+
+[FileInfo]
+FileName=CompactCom 40 CANopen ADIMAP_SPEED_EXAMPLE.eds
+FileVersion=1
+FileRevision=1
+EDSVersion=4.0
+Description=EDS file for Anybus CompactCom 40 CANopen Starterkit Speed Example
+CreationTime=12:00PM
+CreationDate=03-05-2019
+CreatedBy=HMS Industrial Networks
+ModificationTime=12:00PM
+ModificationDate=03-05-2019
+ModifiedBy=HMS Industrial Networks
+
+
+
+[DeviceInfo]
+VendorName=HMS Industrial Networks
+VendorNumber=0x0000001B
+ProductName=Anybus CompactCom 40 CANopen
+ProductNumber=0x000D
+RevisionNumber=0x00010002
+OrderCode=0
+BaudRate_10=1
+BaudRate_20=1
+BaudRate_50=1
+BaudRate_125=1
+BaudRate_250=1
+BaudRate_500=1
+BaudRate_800=1
+BaudRate_1000=1
+SimpleBootUpMaster=0
+SimpleBootUpSlave=1
+Granularity=0
+DynamicChannelsSupported=0
+GroupMessaging=0
+NrOfRXPDO=1
+NrOfTXPDO=1
+LSS_Supported=1
+
+
+
+[Comments]
+Lines=4
+Line1=----------------------------------------------------
+Line2= This is the EDS file for the Anybus CompactCom
+Line3= 40 CANopen Starterkit Speed Example
+Line4=----------------------------------------------------
+
+
+
+[MandatoryObjects]
+SupportedObjects=3
+1=0x1000
+2=0x1001
+3=0x1018
+
+[1000]
+ParameterName=Device type
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+PDOMapping=0
+
+[1001]
+ParameterName=Error register
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+PDOMapping=0
+
+[1018]
+SubNumber=5
+ParameterName=Identity object
+ObjectType=0x9
+
+[1018sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+DataType=0x0005
+AccessType=const
+DefaultValue=4
+PDOMapping=0
+
+[1018sub1]
+ParameterName=Vendor ID
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+PDOMapping=0
+
+[1018sub2]
+ParameterName=Product Code
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+PDOMapping=0
+
+[1018sub3]
+ParameterName=Revision Number
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+PDOMapping=0
+
+[1018sub4]
+ParameterName=Serial Number
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+PDOMapping=0
+
+
+
+[OptionalObjects]
+SupportedObjects=15
+1=0x1003
+2=0x1005
+3=0x1008
+4=0x1009
+5=0x100a
+6=0x1010
+7=0x1011
+8=0x1014
+9=0x1015
+10=0x1016
+11=0x1017
+12=0x1400
+13=0x1600
+14=0x1800
+15=0x1a00
+
+[1003]
+SubNumber=6
+ParameterName=Pre-defined error field
+ObjectType=0x8
+
+[1003sub0]
+ParameterName=Number of errors
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1003sub1]
+ParameterName=Standard error field
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[1003sub2]
+ParameterName=Standard error field
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[1003sub3]
+ParameterName=Standard error field
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[1003sub4]
+ParameterName=Standard error field
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[1003sub5]
+ParameterName=Standard error field
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[1005]
+ParameterName=COB-ID SYNC message
+ObjectType=0x7
+DataType=0x0007
+DefaultValue=0x00000080
+AccessType=rw
+PDOMapping=0
+
+[1008]
+ParameterName=Manufacturer device name
+ObjectType=0x7
+DataType=0x0009
+AccessType=const
+PDOMapping=0
+
+[1009]
+ParameterName=Manufacturer hardware version
+ObjectType=0x7
+DataType=0x0009
+AccessType=const
+PDOMapping=0
+
+[100A]
+ParameterName=Manufacturer software version
+ObjectType=0x7
+DataType=0x0009
+AccessType=const
+PDOMapping=0
+
+[1010]
+SubNumber=3
+ParameterName=Store parameters
+ObjectType=0x8
+
+[1010sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+DataType=0x0005
+DefaultValue=2
+AccessType=const
+PDOMapping=0
+
+[1010sub1]
+ParameterName=Save all parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+
+[1010sub2]
+ParameterName=Save communication parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+
+[1011]
+SubNumber=4
+ParameterName=Restore default Parameters
+ObjectType=0x8
+
+[1011sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+DataType=0x0005
+DefaultValue=4
+AccessType=const
+PDOMapping=0
+
+[1011sub1]
+ParameterName=Restore all default parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+
+[1011sub2]
+ParameterName=Restore communication default parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+
+[1011sub4]
+ParameterName=Restore manufacturer defined default parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+PDOMapping=0
+
+[1014]
+ParameterName=COB-ID EMCY
+ObjectType=0x7
+DataType=0x0007
+DefaultValue=$NODEID+0x80
+AccessType=rw
+PDOMapping=0
+
+[1015]
+ParameterName=Inhibit time EMCY
+ObjectType=0x7
+DataType=0x0006
+DefaultValue=0
+AccessType=rw
+PDOMapping=0
+
+[1016]
+SubNumber=2
+ParameterName=Consumer heartbeat time
+ObjectType=0x8
+
+[1016sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+DataType=0x0005
+DefaultValue=1
+AccessType=const
+PDOMapping=0
+
+[1016sub1]
+ParameterName=Consumer heartbeat time
+ObjectType=0x7
+DataType=0x0007
+DefaultValue=0x00000000
+AccessType=rw
+PDOMapping=0
+
+[1017]
+ParameterName=Producer heartbeat time
+ObjectType=0x7
+DataType=0x0006
+DefaultValue=0
+AccessType=rw
+PDOMapping=0
+
+;------------------------------------------------------------------------------
+; Start of the PDO mapping. The PDO mapping normally needs to be changed
+; according to the process data mapping created by the host application.
+;
+; The example below corresponds to the CompactCom Starterkit Speed Example.
+;------------------------------------------------------------------------------
+
+[1400]
+SubNumber=3
+ParameterName=RPDO communication parameter
+ObjectType=0x9
+
+[1400sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+DataType=0x0005
+AccessType=const
+DefaultValue=2
+PDOMapping=0
+
+[1400sub1]
+ParameterName=COB-ID used by RPDO
+ObjectType=0x7
+DataType=0x0007
+DefaultValue=$NODEID+0x200
+AccessType=rw
+PDOMapping=0
+
+[1400sub2]
+ParameterName=Transmission type
+ObjectType=0x7
+DataType=0x0005
+DefaultValue=254
+AccessType=rw
+PDOMapping=0
+
+[1600]
+SubNumber=2
+ParameterName=RPDO mapping parameter
+ObjectType=0x9
+
+[1600sub0]
+ParameterName=Number of mapped application objects in PDO
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=1
+PDOMapping=0
+
+[1600sub1]
+ParameterName=1st application parameter
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x20020010
+PDOMapping=0
+
+[1800]
+SubNumber=5
+ParameterName=TPDO communication parameter
+ObjectType=0x9
+
+[1800sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+DataType=0x0005
+AccessType=const
+DefaultValue=5
+PDOMapping=0
+
+[1800sub1]
+ParameterName=COB-ID used by TPDO
+ObjectType=0x7
+DataType=0x0007
+DefaultValue=$NODEID+0x40000180
+AccessType=rw
+PDOMapping=0
+
+[1800sub2]
+ParameterName=Transmission type
+ObjectType=0x7
+DataType=0x0005
+DefaultValue=254
+AccessType=rw
+PDOMapping=0
+
+[1800sub3]
+ParameterName=Inhibit time
+ObjectType=0x7
+DataType=0x0006
+DefaultValue=0
+AccessType=rw
+PDOMapping=0
+
+[1800sub5]
+ParameterName=Event timer
+ObjectType=0x7
+DataType=0x0006
+DefaultValue=0
+AccessType=rw
+PDOMapping=0
+
+[1A00]
+SubNumber=2
+ParameterName=TPDO mapping parameter
+ObjectType=0x9
+
+[1A00sub0]
+ParameterName=Number of mapped application objects in TPDO
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=1
+PDOMapping=0
+
+[1A00sub1]
+ParameterName=1st application parameter
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x20010010
+PDOMapping=0
+
+
+
+;------------------------------------------------------------------------------
+; Manufacturer specific objects. The objects corresponding to instances of the
+; application data object shall be listed here.
+;------------------------------------------------------------------------------
+
+[ManufacturerObjects]
+SupportedObjects=2
+1=0x2001
+2=0x2002
+
+[2001]
+ParameterName=SPEED
+ObjectType=0x7
+DataType=0x0006
+AccessType=ro
+PDOMapping=1
+
+[2002]
+ParameterName=REF_SPEED
+ObjectType=0x7
+DataType=0x0006
+AccessType=rww
+PDOMapping=1
+
+;------------------------------------------------------------------------------
+; Dummy entries. Not used by the Anybus CompactCom 40 CANopen.
+;------------------------------------------------------------------------------
+
+[DummyUsage]
+Dummy0001=0
+Dummy0002=0
+Dummy0003=0
+Dummy0004=0
+Dummy0005=0
+Dummy0006=0
+Dummy0007=0

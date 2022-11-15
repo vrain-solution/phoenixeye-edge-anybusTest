@@ -1,0 +1,5 @@
+/* settings imported from old "C/C++ Language" panel */
+
+#if !__option(precompile)
+#include "ansi_prefix.PPCEABI.bare.rom.h" /* was "Prefix file" */
+#endif
