@@ -48,16 +48,16 @@
 **------------------------------------------------------------------------------
 */
 #ifndef ABCC_CFG_DRV_PARALLEL
-   #define ABCC_CFG_DRV_PARALLEL                      ( TRUE )
+   #define ABCC_CFG_DRV_PARALLEL                      ( FALSE )
 #endif
 #ifndef ABCC_CFG_DRV_SPI
    #define ABCC_CFG_DRV_SPI                           ( TRUE )
 #endif
 #ifndef ABCC_CFG_DRV_SERIAL
-   #define ABCC_CFG_DRV_SERIAL                        ( TRUE )
+   #define ABCC_CFG_DRV_SERIAL                        ( FALSE )
 #endif
 #ifndef ABCC_CFG_DRV_PARALLEL_30
-   #define ABCC_CFG_DRV_PARALLEL_30                   ( TRUE )
+   #define ABCC_CFG_DRV_PARALLEL_30                   ( FALSE )
 #endif
 
 /*------------------------------------------------------------------------------
@@ -69,17 +69,17 @@
 **------------------------------------------------------------------------------
 */
 #ifndef ABCC_CFG_OP_MODE_GETTABLE
-   #define ABCC_CFG_OP_MODE_GETTABLE                  ( TRUE )
+   #define ABCC_CFG_OP_MODE_GETTABLE                  ( FALSE )
 #endif
 #ifndef ABCC_CFG_OP_MODE_SETTABLE
-   #define ABCC_CFG_OP_MODE_SETTABLE                  ( TRUE )
+   #define ABCC_CFG_OP_MODE_SETTABLE                  ( FALSE )
 #endif
 #if( !ABCC_CFG_OP_MODE_GETTABLE )
    #ifndef ABCC_CFG_ABCC_OP_MODE_30
       #define ABCC_CFG_ABCC_OP_MODE_30 ABP_OP_MODE_8_BIT_PARALLEL
    #endif
    #ifndef ABCC_CFG_ABCC_OP_MODE_40
-      #define ABCC_CFG_ABCC_OP_MODE_40 ABP_OP_MODE_8_BIT_PARALLEL
+      #define ABCC_CFG_ABCC_OP_MODE_40 ABP_OP_MODE_SPI
    #endif
 #endif
 
@@ -143,7 +143,7 @@
 **------------------------------------------------------------------------------
 */
 #ifndef ABCC_CFG_MODULE_ID_PINS_CONN
-   #define ABCC_CFG_MODULE_ID_PINS_CONN               ( TRUE )
+   #define ABCC_CFG_MODULE_ID_PINS_CONN               ( FALSE )
 #endif
 
 #if( !ABCC_CFG_MODULE_ID_PINS_CONN )
@@ -160,7 +160,7 @@
 **------------------------------------------------------------------------------
 */
 #ifndef ABCC_CFG_MOD_DETECT_PINS_CONN
-   #define ABCC_CFG_MOD_DETECT_PINS_CONN              ( TRUE )
+   #define ABCC_CFG_MOD_DETECT_PINS_CONN              ( FALSE )
 #endif
 
 /*------------------------------------------------------------------------------
@@ -177,7 +177,7 @@
    #define ABCC_CFG_MAX_NUM_ABCC_CMDS                 ( 2 )
 #endif
 #ifndef ABCC_CFG_MAX_MSG_SIZE
-   #define ABCC_CFG_MAX_MSG_SIZE                      ( 255 )
+   #define ABCC_CFG_MAX_MSG_SIZE                      ( 1524 )
 #endif
 #ifndef ABCC_CFG_MAX_PROCESS_DATA_SIZE
    #define ABCC_CFG_MAX_PROCESS_DATA_SIZE             ( 512 )
@@ -316,10 +316,10 @@
    #define ABCC_CFG_DEBUG_EVENT_ENABLED               ( TRUE )
 #endif
 #ifndef ABCC_CFG_DEBUG_ERR_ENABLED
-   #define ABCC_CFG_DEBUG_ERR_ENABLED                 ( FALSE )
+   #define ABCC_CFG_DEBUG_ERR_ENABLED                 ( TRUE )
 #endif
 #ifndef ABCC_CFG_DEBUG_MESSAGING
-   #define ABCC_CFG_DEBUG_MESSAGING                   ( FALSE )
+   #define ABCC_CFG_DEBUG_MESSAGING                   ( TRUE )
 #endif
 #ifndef ABCC_CFG_DEBUG_CMD_SEQ_ENABLED
    #define ABCC_CFG_DEBUG_CMD_SEQ_ENABLED             ( FALSE )

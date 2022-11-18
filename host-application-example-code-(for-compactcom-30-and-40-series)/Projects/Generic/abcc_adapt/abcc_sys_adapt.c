@@ -33,12 +33,28 @@
 #include "abcc_sys_adapt_par.h"
 #include "abcc_sys_adapt_ser.h"
 
+#include "spi_IF.h"
+#include "GPIO_IF.h"
+void* spi_handl_;
 
 BOOL ABCC_SYS_HwInit( void )
 {
    /*
    ** Implement according to abcc_sys_adapt.h
    */
+
+   // SPI初期化
+   spi_handl_ = spi_if_init();
+
+   if(spi_handl_ == NULL){
+      // 失敗
+      return FALSE;
+   }
+
+   // GPIOピンの設定
+   gpio_if_init();
+
+   return TRUE;
 }
 
 
@@ -47,6 +63,7 @@ BOOL ABCC_SYS_Init( void )
    /*
    ** Implement according to abcc_sys_adapt.h
    */
+   return TRUE;
 }
 
 
@@ -83,6 +100,9 @@ void ABCC_SYS_HWReset( void )
    /*
    ** Implement according to abcc_sys_adapt.h
    */
+
+   // RESETピンをLOWにする
+   gpio_if_HWReset();
 }
 
 
@@ -91,6 +111,8 @@ void ABCC_SYS_HWReleaseReset( void )
    /*
    ** Implement according to abcc_sys_adapt.h
    */
+   // RESETピンをHIGHにする
+   gpio_if_HWReleaseReset();
 }
 
 
@@ -159,6 +181,7 @@ BOOL ABCC_SYS_IsAbccInterruptActive( void )
 }
 #endif
 
+static ABCC_SYS_SpiDataReceivedCbfType pnDataReadyCbf;
 
 #if( ABCC_CFG_DRV_SPI )
 void ABCC_SYS_SpiRegDataReceived( ABCC_SYS_SpiDataReceivedCbfType pnDataReceived  )
@@ -166,6 +189,7 @@ void ABCC_SYS_SpiRegDataReceived( ABCC_SYS_SpiDataReceivedCbfType pnDataReceived
    /*
    ** Implement according to abcc_sys_adapt_spi.h
    */
+   pnDataReadyCbf = pnDataReceived;
 }
 
 
@@ -174,6 +198,7 @@ void ABCC_SYS_SpiSendReceive( void* pxSendDataBuffer, void* pxReceiveDataBuffer,
    /*
    ** Implement according to abcc_sys_adapt_spi.h
    */
+   spi_if_xfer(spi_handl_, (UINT8*)pxSendDataBuffer, (UINT8)iLength, (UINT8*)pxReceiveDataBuffer, (UINT8)iLength);
 }
 #endif
 

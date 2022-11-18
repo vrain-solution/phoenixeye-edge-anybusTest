@@ -81,7 +81,7 @@
 ********************************************************************************
 */
 
-#define ABCC_PORT_DebugPrint( args )
+#define ABCC_PORT_DebugPrint( args ) printf args
 
 #define ABCC_PORT_UseCritical()
 

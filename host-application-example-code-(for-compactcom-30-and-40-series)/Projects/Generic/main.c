@@ -63,10 +63,13 @@ int main()
    ** initialization to keep the ABCC module in reset until the driver releases
    ** it.
    */
+
+   printf("hellow anybus\n");
    APPL_AbccHandlerStatusType eAbccHandlerStatus = APPL_MODULE_NO_ERROR;
 
    if( ABCC_HwInit() != ABCC_EC_NO_ERROR )
    {
+      printf("ABCC_HwInit ERROR\n");
       return( 0 );
    }
 
@@ -77,6 +80,7 @@ int main()
    while( eAbccHandlerStatus == APPL_MODULE_NO_ERROR )
    {
       eAbccHandlerStatus = APPL_HandleAbcc();
+      printf("eAbccHandlerStatus %d\n", eAbccHandlerStatus);
 
 #if( !USE_TIMER_INTERRUPT )
       ABCC_RunTimerSystem( APPL_TIMER_MS );
