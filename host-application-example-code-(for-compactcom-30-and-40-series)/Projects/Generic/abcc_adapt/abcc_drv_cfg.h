@@ -143,7 +143,7 @@
 **------------------------------------------------------------------------------
 */
 #ifndef ABCC_CFG_MODULE_ID_PINS_CONN
-   #define ABCC_CFG_MODULE_ID_PINS_CONN               ( FALSE )
+   #define ABCC_CFG_MODULE_ID_PINS_CONN               ( TRUE )
 #endif
 
 #if( !ABCC_CFG_MODULE_ID_PINS_CONN )
@@ -213,7 +213,7 @@
 **------------------------------------------------------------------------------
 */
 #ifndef ABCC_CFG_POLL_ABCC_IRQ_PIN
-   #define ABCC_CFG_POLL_ABCC_IRQ_PIN                 ( FALSE )
+   #define ABCC_CFG_POLL_ABCC_IRQ_PIN                 ( TRUE )
 #endif
 #ifndef ABCC_CFG_INT_ENABLED
    #define ABCC_CFG_INT_ENABLED                       ( FALSE )

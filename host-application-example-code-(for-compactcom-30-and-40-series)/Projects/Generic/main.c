@@ -45,6 +45,8 @@ static void TimerIsr( void )
 
 static void SetupTimerInterrupt( void )
 {
+   // 暫定 一旦ポーリング毎に5[ms]時間が進んだとして動作させる。
+   ABCC_RunTimerSystem( 5 );
 }
 #else
 static void DelayMs( UINT32 lDelayMs )
@@ -80,7 +82,7 @@ int main()
    while( eAbccHandlerStatus == APPL_MODULE_NO_ERROR )
    {
       eAbccHandlerStatus = APPL_HandleAbcc();
-      printf("eAbccHandlerStatus %d\n", eAbccHandlerStatus);
+      //printf("eAbccHandlerStatus %d\n", eAbccHandlerStatus);
 
 #if( !USE_TIMER_INTERRUPT )
       ABCC_RunTimerSystem( APPL_TIMER_MS );

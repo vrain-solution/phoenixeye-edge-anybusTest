@@ -3,3 +3,8 @@ https://www.anybus.com/ja/technical-support/japan-embedded-doc-files
 
 
 https://www.anybus.com/technical-support/file-doc-downloads/starterkit40?ordercode=ABCC40STK
+
+
+
+■Eternet/IPサポートページ
+https://www.anybus.com/technical-support/pages/files-and-documentation---compactcom?ordercode=AB6604

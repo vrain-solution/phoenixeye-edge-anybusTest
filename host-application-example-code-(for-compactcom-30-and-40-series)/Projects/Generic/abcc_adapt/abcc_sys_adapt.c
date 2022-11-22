@@ -63,6 +63,10 @@ BOOL ABCC_SYS_Init( void )
    /*
    ** Implement according to abcc_sys_adapt.h
    */
+
+   // RESETピンをLOWにする
+   gpio_if_HWReset();
+   
    return TRUE;
 }
 
@@ -122,6 +126,10 @@ UINT8 ABCC_SYS_ReadModuleId( void )
    /*
    ** Implement according to abcc_sys_adapt.h
    */
+   UINT8 mi = gpio_if_ReadMI();
+   printf("mi = %d\n",mi);
+
+   return mi;
 }
 #endif
 
@@ -178,6 +186,15 @@ BOOL ABCC_SYS_IsAbccInterruptActive( void )
    /*
    ** Implement according to abcc_sys_adapt.h
    */
+  int irq = gpio_if_ReadIRQ();
+  printf("irq=%d\n",irq);
+
+   // 割り込みはLOW     Active low interrupt signal
+  if( irq == 0){
+      return( TRUE );
+  } else {
+      return( FALSE );
+  }
 }
 #endif
 
