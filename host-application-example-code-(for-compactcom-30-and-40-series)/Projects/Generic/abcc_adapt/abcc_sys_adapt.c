@@ -209,13 +209,21 @@ void ABCC_SYS_SpiRegDataReceived( ABCC_SYS_SpiDataReceivedCbfType pnDataReceived
    pnDataReadyCbf = pnDataReceived;
 }
 
-
+#include <unistd.h>
 void ABCC_SYS_SpiSendReceive( void* pxSendDataBuffer, void* pxReceiveDataBuffer, UINT16 iLength )
 {
    /*
    ** Implement according to abcc_sys_adapt_spi.h
    */
+#if 1
    spi_if_xfer(spi_handl_, (UINT8*)pxSendDataBuffer, (UINT8)iLength, (UINT8*)pxReceiveDataBuffer, (UINT8)iLength);
+#else
+   spi_if_xfer(spi_handl_, (UINT8*)pxSendDataBuffer, (UINT8)iLength, NULL, (UINT8)iLength);
+   sleep(2);
+   spi_if_xfer(spi_handl_, NULL, (UINT8)iLength, (UINT8*)pxReceiveDataBuffer, (UINT8)iLength);
+
+#endif
+   pnDataReadyCbf();
 }
 #endif
 
