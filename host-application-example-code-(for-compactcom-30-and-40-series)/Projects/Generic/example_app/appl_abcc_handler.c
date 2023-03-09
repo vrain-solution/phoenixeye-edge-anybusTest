@@ -422,6 +422,15 @@ static ABCC_CmdSeqCmdStatusType UpdateIpAddress( ABP_MsgType* psMsg )
                          4,
                          ABCC_GetNewSourceId() );
 
+// TEST
+printf("***** %d,%d,%d,%d\n", 
+   appl_sIpSettings.sAddress.uValue.abValue[0],
+   appl_sIpSettings.sAddress.uValue.abValue[1],
+   appl_sIpSettings.sAddress.uValue.abValue[2],
+   appl_sIpSettings.sAddress.uValue.abValue[3]
+);
+
+
       ABCC_SetMsgString( psMsg, (char*)appl_sIpSettings.sAddress.uValue.abValue, 4, 0 );
 
       return( ABCC_SEND_COMMAND );
@@ -828,6 +837,8 @@ void APPL_SetAddress( UINT16 iSwitchValue )
 void APPL_SetAddress( UINT8 bSwitchValue )
 {
    appl_fSetAddr = TRUE;
+// TEST
+printf("**** Set IP address.\n");
 
    if( appl_fSetAddrInProgress )
    {
@@ -853,6 +864,14 @@ void APPL_SetAddress( UINT8 bSwitchValue )
       /*
       ** Indicate to application object that the address is set by HW switches
       */
+// TEST
+printf("**** IP address %d.%d.%d.%d.\n", 
+      appl_sIpSettings.sAddress.uValue.abValue[0],
+      appl_sIpSettings.sAddress.uValue.abValue[1],
+      appl_sIpSettings.sAddress.uValue.abValue[2],
+      appl_sIpSettings.sAddress.uValue.abValue[3]
+   );
+
    #if APP_OBJ_ENABLE
       APP_HwConfAddress( TRUE );
    #endif

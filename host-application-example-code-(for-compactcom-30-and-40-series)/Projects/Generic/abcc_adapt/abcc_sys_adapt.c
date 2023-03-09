@@ -43,6 +43,9 @@ BOOL ABCC_SYS_HwInit( void )
    ** Implement according to abcc_sys_adapt.h
    */
 
+   // GPIOピンの設定
+   gpio_if_init();
+
    // SPI初期化
    spi_handl_ = spi_if_init();
 
@@ -51,8 +54,8 @@ BOOL ABCC_SYS_HwInit( void )
       return FALSE;
    }
 
-   // GPIOピンの設定
-   gpio_if_init();
+//   // GPIOピンの設定
+//   gpio_if_init();
 
    return TRUE;
 }
@@ -76,6 +79,7 @@ void ABCC_SYS_Close( void )
    /*
    ** Implement according to abcc_sys_adapt.h
    */
+  gpio_if_cleanup();
 }
 
 
@@ -186,8 +190,12 @@ BOOL ABCC_SYS_IsAbccInterruptActive( void )
    /*
    ** Implement according to abcc_sys_adapt.h
    */
+  static int last_irq = 1;
   int irq = gpio_if_ReadIRQ();
-  printf("irq=%d\n",irq);
+  if( last_irq != irq ){
+    printf("irq=%d->%d\n",last_irq, irq);
+    last_irq = irq;
+  }
 
    // 割り込みはLOW     Active low interrupt signal
   if( irq == 0){

@@ -710,6 +710,13 @@ static ABCC_CmdSeqRespStatusType ReadWriteMapResp( ABP_MsgType* psMsg )
 */
 static void TriggerUserInit( void )
 {
+// TEST
+printf("**********************************\n");
+printf("**********************************\n");
+printf("******** TriggerUserInit() *******\n");
+printf("**********************************\n");
+printf("**********************************\n");
+
    ABCC_CbfUserInitReq();
 }
 

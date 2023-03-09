@@ -96,7 +96,8 @@
    #define SYNC_OBJ_ENABLE                         ABCC_CFG_SYNC_ENABLE
 #endif
 #ifndef ETN_OBJ_ENABLE
-   #define ETN_OBJ_ENABLE                          FALSE
+   #define ETN_OBJ_ENABLE                          TRUE
+//   #define ETN_OBJ_ENABLE                          FALSE
 #endif
 #ifndef OPCUA_OBJ_ENABLE
    #define OPCUA_OBJ_ENABLE                        FALSE
@@ -1088,7 +1089,8 @@
 ** Attribute 3: Enable Web Server  (BOOL - TRUE/FALSE)
 */
 #ifndef ETN_IA_ENABLE_WEB_ENABLE
-   #define ETN_IA_ENABLE_WEB_ENABLE                FALSE
+   // #define ETN_IA_ENABLE_WEB_ENABLE                FALSE
+   #define ETN_IA_ENABLE_WEB_ENABLE                TRUE
    #define ETN_IA_ENABLE_WEB_VALUE                 TRUE
 #endif
 
@@ -1104,7 +1106,8 @@
 ** Attribute 5: Enable Web ADI access  (BOOL - TRUE/FALSE)
 */
 #ifndef ETN_IA_ENABLE_WEB_ADI_ACCESS_ENABLE
-   #define ETN_IA_ENABLE_WEB_ADI_ACCESS_ENABLE     FALSE
+   // #define ETN_IA_ENABLE_WEB_ADI_ACCESS_ENABLE     FALSE
+   #define ETN_IA_ENABLE_WEB_ADI_ACCESS_ENABLE     TRUE
    #define ETN_IA_ENABLE_WEB_ADI_ACCESS_VALUE      TRUE
 #endif
 
@@ -1112,7 +1115,8 @@
 ** Attribute 6: Enable FTP server  (BOOL - TRUE/FALSE)
 */
 #ifndef ETN_IA_ENABLE_FTP_ENABLE
-   #define ETN_IA_ENABLE_FTP_ENABLE                FALSE
+   // #define ETN_IA_ENABLE_FTP_ENABLE                FALSE
+   #define ETN_IA_ENABLE_FTP_ENABLE                TRUE
    #define ETN_IA_ENABLE_FTP_VALUE                 TRUE
 #endif
 
@@ -1159,7 +1163,8 @@
 ** Attribute 14: Enable web update  (BOOL - TRUE/FALSE).
 */
 #ifndef ETN_IA_ENABLE_WEB_UPDATE_ENABLE
-   #define ETN_IA_ENABLE_WEB_UPDATE_ENABLE         FALSE
+   // #define ETN_IA_ENABLE_WEB_UPDATE_ENABLE         FALSE
+   #define ETN_IA_ENABLE_WEB_UPDATE_ENABLE         TRUE
    #define ETN_IA_ENABLE_WEB_UPDATE_VALUE          TRUE
 #endif
 
@@ -1182,7 +1187,8 @@
 ** Attribute 17: IP address byte 0-2 (Array[3] of UINT8)
 */
 #ifndef ETN_IA_IP_ADDRESS_BYTE_0_2_ENABLE
-   #define ETN_IA_IP_ADDRESS_BYTE_0_2_ENABLE       FALSE
+   // #define ETN_IA_IP_ADDRESS_BYTE_0_2_ENABLE       FALSE
+   #define ETN_IA_IP_ADDRESS_BYTE_0_2_ENABLE       TRUE
    #define ETN_IA_IP_ADDRESS_BYTE_0_2_VALUE        "\xC0\xA8\x00"
 #endif
 
@@ -1191,6 +1197,7 @@
 */
 #ifndef ETN_IA_ETH_PHY_CONFIG_ENABLE
    #define ETN_IA_ETH_PHY_CONFIG_ENABLE            FALSE
+   // #define ETN_IA_ETH_PHY_CONFIG_ENABLE            TRUE
    #define ETN_IA_ETH_PHY_CONFIG_PORT1_VALUE       0x0001
    #define ETN_IA_ETH_PHY_CONFIG_PORT2_VALUE       0x0001
 #endif
@@ -1232,8 +1239,10 @@
 ** Attribute 24: Enable DHCP Client (BOOL - TRUE/FALSE)
 */
 #ifndef ETN_IA_ENABLE_DHCP_CLIENT_ENABLE
-   #define ETN_IA_ENABLE_DHCP_CLIENT_ENABLE        FALSE
-   #define ETN_IA_ENABLE_DHCP_CLIENT_VALUE         TRUE
+//   #define ETN_IA_ENABLE_DHCP_CLIENT_ENABLE        FALSE
+//   #define ETN_IA_ENABLE_DHCP_CLIENT_VALUE         TRUE
+   #define ETN_IA_ENABLE_DHCP_CLIENT_ENABLE        TRUE
+   #define ETN_IA_ENABLE_DHCP_CLIENT_VALUE         FALSE
 #endif
 
 /*

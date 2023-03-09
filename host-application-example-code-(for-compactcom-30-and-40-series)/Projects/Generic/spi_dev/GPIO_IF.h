@@ -7,6 +7,7 @@ extern "C" {
 
 
 void gpio_if_init(void);
+void gpio_if_cleanup(void);
 void gpio_if_HWReset(void);
 void gpio_if_HWReleaseReset(void);
 int gpio_if_ReadMI(void);

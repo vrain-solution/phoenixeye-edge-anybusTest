@@ -813,6 +813,7 @@ EXTFUNC void ABCC_GpioSet( void );
 **------------------------------------------------------------------------------
 */
 EXTFUNC ABCC_ErrorCodeType ABCC_HwInit( void );
+EXTFUNC ABCC_ErrorCodeType ABCC_HwClose( void );
 
 /*------------------------------------------------------------------------------
 ** This function will initiate the driver, enable interrupt, and set the

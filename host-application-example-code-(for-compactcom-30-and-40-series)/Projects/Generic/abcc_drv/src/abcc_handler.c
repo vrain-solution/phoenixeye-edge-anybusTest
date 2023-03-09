@@ -366,6 +366,11 @@ ABCC_ErrorCodeType ABCC_HwInit( void )
    return( ABCC_EC_NO_ERROR );
 }
 
+ABCC_ErrorCodeType ABCC_HwClose( void )
+{
+   ABCC_SYS_Close();
+   return( ABCC_EC_NO_ERROR );
+}
 
 ABCC_ErrorCodeType ABCC_StartDriver( UINT32 lMaxStartupTimeMs )
 {
@@ -689,6 +694,9 @@ ABCC_CommunicationStateType ABCC_isReadyForCommunication( void )
       pnABCC_DrvSetIntMask( ABCC_iInterruptEnableMask );
       abcc_eMainState = ABCC_DRV_RUNNING;
       pnABCC_DrvSetNbrOfCmds( ABCC_CFG_MAX_NUM_APPL_CMDS );
+
+// TEST
+printf("ABCC_StartSetup()\n");
 
       ABCC_StartSetup();
       return( ABCC_READY_FOR_COMMUNICATION );
